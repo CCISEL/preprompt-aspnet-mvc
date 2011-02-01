@@ -1,0 +1,14 @@
+*.[Cc]ache
+*.csproj.user
+*.[Rr]e[Ss]harper*
+*.sln.cache
+*.suo
+*.user
+*.orig
+*.pidb
+*.userprefs
+AssemblyInfo.cs
+.DS_Store
+deploy/
+build/
+_[Rr]e[Ss]harper.*/
