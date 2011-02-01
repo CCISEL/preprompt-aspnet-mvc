@@ -53,4 +53,4 @@ Luís Falcão e João Trindade
 
 # How to get this code from github
 
-git glone https://github.com/prompt/preprompt-aspnet-mvc.git
+git clone https://github.com/prompt/preprompt-aspnet-mvc.git
