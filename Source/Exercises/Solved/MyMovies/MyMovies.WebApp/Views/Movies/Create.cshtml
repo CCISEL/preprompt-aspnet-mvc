@@ -23,10 +23,10 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.ReleaseDate)
+            @Html.LabelFor(model => model.Year)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.ReleaseDate)
+            @Html.EditorFor(model => model.Year)
             @Html.ValidationMessageFor(model => model.ReleaseDate)
         </div>
 
@@ -36,22 +36,6 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.Genre)
             @Html.ValidationMessageFor(model => model.Genre)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Price)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Price)
-            @Html.ValidationMessageFor(model => model.Price)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Rating)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Rating)
-            @Html.ValidationMessageFor(model => model.Rating)
         </div>
 
         <p>

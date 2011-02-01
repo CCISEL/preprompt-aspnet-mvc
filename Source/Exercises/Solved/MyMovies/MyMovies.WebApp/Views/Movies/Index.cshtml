@@ -20,16 +20,10 @@
             Title
         </th>
         <th>
-            ReleaseDate
+            Year
         </th>
         <th>
             Genre
-        </th>
-        <th>
-            Price
-        </th>
-        <th>
-            Rating
         </th>
     </tr>
 
@@ -44,16 +38,10 @@
             @item.Title
         </td>
         <td>
-            @String.Format("{0:d}", item.ReleaseDate)
+            @item.Year
         </td>
         <td>
             @item.Genre
-        </td>
-        <td>
-            @String.Format("{0:c}", item.Price)
-        </td>
-        <td>
-            @item.Rating
         </td>
     </tr>
 }

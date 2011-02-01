@@ -13,8 +13,8 @@ namespace MyMovies.DependencyResolution {
                                         scan.TheCallingAssembly();
                                         scan.WithDefaultConventions();
                                     });
-                            //x.For<IMoviesService>().HttpContextScoped().Use<EFMoviesService>();
-                            x.For<IMoviesService>().HttpContextScoped().Use<RepositoryMoviesService>();
+                            x.For<IMoviesService>().HttpContextScoped().Use<EFMoviesService>();
+                            //x.For<IMoviesService>().HttpContextScoped().Use<RepositoryMoviesService>();
                             x.For<IMoviesRepository>().HttpContextScoped().Use<EFIMDBAPIMoviesRepository>();
                             x.For<MovieDBContext>().HttpContextScoped().Use<MovieDBContext>();
                         });

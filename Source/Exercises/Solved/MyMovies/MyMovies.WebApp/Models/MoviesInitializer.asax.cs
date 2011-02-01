@@ -14,10 +14,12 @@ namespace MyMovies.WebApp.Models
  
                  new Movie { Title = "When Harry Met Sally",  
                              Genre="Romantic Comedy", 
+                             Year = 2004
                  }, 
  
                  new Movie { Title = "Ghostbusters 2",  
                              Genre="Comedy", 
+                             Year = 2002
                  },  
              };
 

@@ -18,8 +18,9 @@ namespace MyMovies.DomainModel
         public string Genre { get; set; }
         public string Director { get; set; }
         public string Actors { get; set; }
-        public Uri Image { get; set; }
+        public string Image { get; set; }
         public TimeSpan Runtime { get; set; }
+        //public string Xpto { get; set; }
         
         //[StringLength(5)]
 
