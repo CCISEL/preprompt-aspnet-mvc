@@ -11,4 +11,8 @@ AssemblyInfo.cs
 .DS_Store
 deploy/
 build/
+[Bb]in/
+[Dd]ebug/
+[Oo]bj/
+[Rr]elease/
 _[Rr]e[Ss]harper.*/
