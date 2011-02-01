@@ -49,3 +49,8 @@ Luís Falcão e João Trindade
 ## Data
 
 2 de Fevereiro de 2011, das 17:00 às 22:30
+
+
+# How to get this code from github
+
+git glone https://github.com/prompt/preprompt-aspnet-mvc.git
