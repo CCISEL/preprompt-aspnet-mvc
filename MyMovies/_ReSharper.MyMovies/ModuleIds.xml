@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="208B1EAA-EBE5-4202-891D-3D32A0DAE1E3" ModuleId="MyMovies.DomainModel" />
+  <Module PersistentId="B48A8415-A3F2-4DBE-B827-F18BFF307D3C" ModuleId="MyMovies.WebApp" />
+</Modules>
