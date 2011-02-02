@@ -266,6 +266,7 @@ div#title
     text-align:right;
     margin:10px;
     color:White;
+    min-height: 5px;
 }
 
 #logindisplay a:link

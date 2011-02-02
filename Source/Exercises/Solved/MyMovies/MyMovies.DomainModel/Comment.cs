@@ -15,7 +15,7 @@ namespace MyMovies.DomainModel
         public int Rating { get; set; }
 
         public int MovieID { get; set; }
-        public Movie Movie { get; set; }
+        public virtual Movie Movie { get; set; }
 
 
     }

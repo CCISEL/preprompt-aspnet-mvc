@@ -26,9 +26,16 @@ namespace MyMovies.WebApp
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "Comments", // Route name
+                "Movies/{movieId}/{action}/{commentId}", // URL with parameters
+                new { controller = "Movies", commentId = UrlParameter.Optional }, // Parameter defaults,
+                new { movieId = @"\d+" }
+            );
+
+            routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Movies", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
 
         }

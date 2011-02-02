@@ -113,5 +113,32 @@ namespace MyMovies.WebApp.Controllers
             return RedirectToAction("Index");
         }
 
+
+        public ActionResult CreateComment(int movieId)
+        {
+            ViewBag.Ratings = new [] { { Name = "*", Value = 1 } };
+            Comment c = new Comment {MovieID = movieId};
+            return View(c);
+        }
+
+        [HttpPost]
+        public ActionResult CreateComment(Comment c)
+        {
+            try
+            {
+                if (ModelState.IsValid) {
+                    Movie movie = _moviesService.Get(c.MovieID);
+                    movie.Comments.Add(c);
+                    _moviesService.Update(movie);
+                    return RedirectToRoute("Default", new { action = "Details", id = c.MovieID });
+                }
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("", String.Format("Edit Failure, inner exception: {0}", e));
+            }
+
+            return View(c);
+        }
     }
 }

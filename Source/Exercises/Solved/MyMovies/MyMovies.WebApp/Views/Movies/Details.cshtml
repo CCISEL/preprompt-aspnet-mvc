@@ -6,6 +6,7 @@
 
 <h2>Details</h2>
 
+@Html.ActionLink("Create Comment", "CreateComment", new { movieId=Model.ID }) |
 <fieldset>
     <legend>Movie</legend>
 
@@ -31,14 +32,7 @@
     <div class="display-label">Runtime</div>
     <div class="display-field">@Model.Runtime</div>
 </fieldset>
-<fieldset>
-    <legend>Comments</legend>
-    @if(Model.Comments != null) {
-        foreach(var c in Model.Comments) {
-          @Html.Partial("Comments", c)     
-        }
-    }
-</fieldset>
+@Html.Partial("Comments", Model.Comments)     
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
     @Html.ActionLink("Back to List", "Index")
