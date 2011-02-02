@@ -2,7 +2,7 @@ using MyMovies.DomainModel;
 using MyMovies.DomainModel.Services;
 using MyMovies.DomainModel.ServicesImpl;
 using MyMovies.DomainModel.ServicesRepositoryInterfaces;
-using MyMovies.Repository.RepositoryImplementations;
+using MyMovies.RepImpl;
 using StructureMap;
 namespace MyMovies.DependencyResolution {
     public static class IoC {
@@ -13,10 +13,10 @@ namespace MyMovies.DependencyResolution {
                                         scan.TheCallingAssembly();
                                         scan.WithDefaultConventions();
                                     });
-                            x.For<IMoviesService>().HttpContextScoped().Use<EFMoviesService>();
-                            //x.For<IMoviesService>().HttpContextScoped().Use<RepositoryMoviesService>();
+                            //x.For<IMoviesService>().HttpContextScoped().Use<EFMoviesService>();
+                            x.For<IMoviesService>().HttpContextScoped().Use<RepositoryMoviesService>();
                             x.For<IMoviesRepository>().HttpContextScoped().Use<EFIMDBAPIMoviesRepository>();
-                            x.For<MovieDBContext>().HttpContextScoped().Use<MovieDBContext>();
+                            x.For<MovieDbContext>().HttpContextScoped().Use<MovieDbContext>();
                         });
             return ObjectFactory.Container;
         }

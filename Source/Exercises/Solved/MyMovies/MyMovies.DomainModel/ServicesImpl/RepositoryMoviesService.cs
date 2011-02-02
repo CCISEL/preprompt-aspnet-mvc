@@ -55,6 +55,11 @@ namespace MyMovies.DomainModel.ServicesImpl
 
         }
 
+        public Movie Search(string title)
+        {
+            return _moviesRepository.SearchByTitle(title);
+        }
+
         public void Dispose()
         {
             _moviesRepository.Dispose();

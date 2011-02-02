@@ -1,11 +1,8 @@
-using System.Collections.Generic;
-using MyMovies.Rep;
-using MyMovies.Repository;
+namespace MyMovies.DomainModel.ServicesRepositoryInterfaces {
+    using System.Collections.Generic;
+    using Rep;
 
-namespace MyMovies.DomainModel.ServicesRepositoryInterfaces
-{
-    public interface IMoviesRepository : IRepository<Movie, int>
-    {
-        ICollection<Movie> SearchByTitle(string title);
+    public interface IMoviesRepository : IRepository<Movie, int> {
+        Movie SearchByTitle(string title);
     }
 }

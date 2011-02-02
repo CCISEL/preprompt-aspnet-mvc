@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.Database;
-using MyMovies.DomainModel;
+﻿namespace MyMovies.WebApp.Models {
+    using System.Collections.Generic;
+    using System.Data.Entity.Database;
+    using DomainModel;
 
-namespace MyMovies.WebApp.Models
-{
-    public class MoviesInitializer : DropCreateDatabaseIfModelChanges<MovieDBContext>
+    public class MoviesInitializer : DropCreateDatabaseIfModelChanges<MovieDbContext>
     {
-        protected override void Seed(MovieDBContext context)
+        protected override void Seed(MovieDbContext context)
         {
 
             var movies = new List<Movie> { 

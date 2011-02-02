@@ -39,8 +39,17 @@ namespace MyMovies.WebApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Movie newMovie)
+        public ActionResult Create(string Title, string  fill)
         {
+            Movie newMovie;
+            if(fill != null)
+            {
+                newMovie = _moviesService.Search(Title);
+                ModelState.Remove("Title");
+                return View(newMovie);
+            }
+
+            TryUpdateModel(newMovie  = new Movie());
             if (ModelState.IsValid)
             {
                 _moviesService.Add(newMovie);

@@ -20,6 +20,7 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.Title)
             @Html.ValidationMessageFor(model => model.Title)
+            <input type="submit" name="fill" value="Fill"/>
         </div>
 
         <div class="editor-label">
@@ -27,7 +28,7 @@
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Year)
-            @Html.ValidationMessageFor(model => model.ReleaseDate)
+            @Html.ValidationMessageFor(model => model.Year)
         </div>
 
         <div class="editor-label">
@@ -38,8 +39,42 @@
             @Html.ValidationMessageFor(model => model.Genre)
         </div>
 
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Director)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Director)
+            @Html.ValidationMessageFor(model => model.Director)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Actors)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Actors)
+            @Html.ValidationMessageFor(model => model.Actors)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Image)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Image)
+            @Html.ValidationMessageFor(model => model.Image)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Runtime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Runtime)
+            @Html.ValidationMessageFor(model => model.Runtime)
+        </div>
+
         <p>
+            
             <input type="submit" value="Create" />
+            
         </p>
     </fieldset>
 }

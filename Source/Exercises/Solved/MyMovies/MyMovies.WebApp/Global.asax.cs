@@ -37,7 +37,7 @@ namespace MyMovies.WebApp
         {
             DbDatabase.SetInitializer(new MoviesInitializer());
             AppStart_Structuremap.Start();
-            DbDatabase.SetInitializer<MovieDBContext>(new MoviesInitializer());
+            DbDatabase.SetInitializer<MovieDbContext>(new MoviesInitializer());
 
 
             AreaRegistration.RegisterAllAreas();

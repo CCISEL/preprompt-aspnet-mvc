@@ -7,14 +7,14 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Quickipic.ServiceLayer.Helpers.Collections
-{
+namespace MyMovies.Rep.Helpers.Collections {
     using System.Collections.Generic;
 
     /// <summary>
     /// Defines an interface for a Paged List
     /// </summary>
-    public interface IPagedList<T>: IList<T> {
+    /// <typeparam name="T">The <see cref="IPagedList{T}"/> elements type</typeparam>
+    public interface IPagedList<T> : IList<T> {
         int TotalCount { get; }
         int TotalPages { get; }
         int PageIndex { get; }

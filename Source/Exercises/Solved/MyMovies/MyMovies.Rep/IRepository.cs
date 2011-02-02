@@ -1,9 +1,18 @@
-using System;
-using System.Linq;
-using Quickipic.ServiceLayer.Helpers.Collections;
+// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="IRepository.cs" company="Centro de Cálculo do ISEL - CCISEL">
+//   Luís Falcão - 2011
+// </copyright>
+// <summary>
+//   Base interface for an entity Repository. This interface includes the basic CRUD operations
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace MyMovies.Rep
 {
+    using System;
+    using System.Linq;
+    using Helpers.Collections;
+
     /// <summary>
     /// Base interface for an entity Repository. This interface includes the basic CRUD operations
     /// </summary>
@@ -105,12 +114,5 @@ namespace MyMovies.Rep
         /// Saves permanently all changes made to the repository.
         /// </summary>
         void Save();
-
-
-        /// <summary>
-        /// Refreshes the specified entities with the physical repository values overwriting the instance values.
-        /// </summary>
-        /// <param name="entities">The entities to refresh.</param>
-        void Refresh(params TEntity[] entities);
     }
 }

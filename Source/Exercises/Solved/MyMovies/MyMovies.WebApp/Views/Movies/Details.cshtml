@@ -18,14 +18,17 @@
     <div class="display-label">Genre</div>
     <div class="display-field">@Model.Genre</div>
 
-</fieldset>
-<fieldset>
-    <legend>Comments</legend>
-    @if (Model.Comments != null) {
-        foreach (MyMovies.DomainModel.Comment c in Model.Comments) {
-            @Html.Partial("Comment", c)
-        }
-    }
+    <div class="display-label">Director</div>
+    <div class="display-field">@Model.Director</div>
+
+    <div class="display-label">Actors</div>
+    <div class="display-field">@Model.Actors</div>
+
+    <div class="display-label">Image</div>
+    <div class="display-field">@Model.Image</div>
+
+    <div class="display-label">Runtime</div>
+    <div class="display-field">@Model.Runtime</div>
 </fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |

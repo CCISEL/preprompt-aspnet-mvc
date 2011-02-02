@@ -7,9 +7,9 @@ namespace MyMovies.DomainModel.ServicesImpl
 {
     public class EFMoviesService : IMoviesService, IDisposable
     {
-        private readonly MovieDBContext _movieDbContext;
+        private readonly MovieDbContext _movieDbContext;
 
-        public EFMoviesService(MovieDBContext movieDbContext)
+        public EFMoviesService(MovieDbContext movieDbContext)
         {
             _movieDbContext = movieDbContext;
         }
@@ -50,6 +50,11 @@ namespace MyMovies.DomainModel.ServicesImpl
 
             _movieDbContext.Movies.Remove(m);
             _movieDbContext.SaveChanges();
+        }
+
+        public Movie Search(string title)
+        {
+            throw new NotImplementedException();
         }
 
         public void Dispose()

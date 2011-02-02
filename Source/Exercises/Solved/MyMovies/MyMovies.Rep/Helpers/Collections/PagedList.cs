@@ -1,19 +1,17 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="PagedList.cs" company="Servisys Solutions, Lda - Quickipic">
-//   Luís Falcão - 2009
+// <copyright file="PagedList.cs" company="Centro de Cálculo do ISEL - CCISEL">
+//   Luís Falcão - 2011
 // </copyright>
 // <summary>
 //   Defines the PagedList type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Quickipic.ServiceLayer.Helpers.Collections;
+namespace MyMovies.Rep.Helpers.Collections {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
 
-namespace MyMovies.Repository.Helpers.Collections
-{
     public class PagedList<T> : List<T>, IPagedList<T> {
 
         private void CreatePagedList(int total, int pageSize, int pageIndex)

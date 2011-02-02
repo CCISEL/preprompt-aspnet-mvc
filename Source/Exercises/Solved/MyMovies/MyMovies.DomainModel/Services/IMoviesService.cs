@@ -11,5 +11,6 @@ namespace MyMovies.DomainModel.Services
         void Add(Movie newMovie);
         void Update(Movie movie);
         void Delete(int id);
+        Movie Search(string title);
     }
 }

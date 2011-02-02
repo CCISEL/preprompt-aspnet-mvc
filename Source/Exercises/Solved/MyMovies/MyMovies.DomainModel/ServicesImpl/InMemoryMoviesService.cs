@@ -50,6 +50,11 @@ namespace MyMovies.DomainModel.ServicesImpl
             throw new NotImplementedException();
         }
 
+        public Movie Search(string title)
+        {
+            throw new NotImplementedException();
+        }
+
         #region Implementation of IDisposable
 
         /// <summary>
