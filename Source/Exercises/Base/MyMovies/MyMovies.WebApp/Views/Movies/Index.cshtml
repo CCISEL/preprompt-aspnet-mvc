@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MyMovies.DomainModel.Movie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>&nbsp;</th>
+        <th>
+            Title
+        </th>
+        <th>
+            Year
+        </th>
+        <th>
+            Genre
+        </th>
+        <th>
+            Director
+        </th>
+        <th>
+            Actors
+        </th>
+        <th>
+            Image
+        </th>
+        <th>
+            Runtime
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id=item.ID })
+        </td>
+        <td>
+            @item.Title
+        </td>
+        <td>
+            @item.Year
+        </td>
+        <td>
+            @item.Genre
+        </td>
+        <td>
+            @item.Director
+        </td>
+        <td>
+            @item.Actors
+        </td>
+        <td>
+            @item.Image
+        </td>
+        <td>
+            @item.Runtime
+        </td>
+    </tr>
+}
+
+</table>
+

@@ -1,0 +1,14 @@
+﻿@model ICollection<MyMovies.DomainModel.Comment>
+<fieldset>
+    <legend>Comments</legend>
+    @foreach (var c in Model)
+    {
+        <div class="display-label">
+            Description</div>
+        <div class="display-field">@c.Description</div>
+
+        <div class="display-label">
+            Rating</div>
+        <div class="display-field">@c.Rating</div>
+    }
+</fieldset>

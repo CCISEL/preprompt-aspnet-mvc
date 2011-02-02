@@ -1,0 +1,11 @@
+﻿@model int
+
+@{
+    ViewBag.Title = "NotFound";
+}
+
+<h2>Movie Not Found</h2>
+<p>Sorry - but the Movie you requested with id '@Model' doesn’t exist or was deleted.</p>
+
+@Html.ActionLink("Back to Movies List", "Index", "Movies")
+
