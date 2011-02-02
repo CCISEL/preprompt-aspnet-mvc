@@ -1,9 +1,9 @@
 // --------------------------------------------------------------------------------------------------------------------
-// <copyright file="IPagedList.cs" company="Servisys Solutions, Lda - Quickipic">
-//   Luís Falcão - 2009
+// <copyright file="IPagedList.cs" company="Centro de Cálculo do ISEL - CCISEL">
+//   Luís Falcão - 2011
 // </copyright>
 // <summary>
-//   Defines the IPagedList type.
+//   Defines an interface for a Paged List
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 

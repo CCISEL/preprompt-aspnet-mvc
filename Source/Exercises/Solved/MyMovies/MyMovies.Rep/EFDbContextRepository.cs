@@ -34,17 +34,8 @@ namespace MyMovies.Rep {
         private readonly DbSet<TEntity> _dbSet;
 
         /// <summary>
-        /// The Key selector expression for instances of <typeparamref name="TEntity"/>. 
-        /// This expression projects an instance of <typeparam name="TEntity"/> in <typeparam name="TKey"/>
-        /// </summary>
-        private readonly Expression<Func<TEntity, TKey>> _keySelector;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="EFDbContextRepository{TEntity,TKey}"/> class. 
         /// </summary>
-        /// <param name="keySelector">
-        /// The key selector.
-        /// </param>
         /// <param name="dbContext">
         /// The data context.
         /// </param>
@@ -90,16 +81,6 @@ namespace MyMovies.Rep {
         #endregion protected hook methods
 
         #region Implementation of IRepository<TSLEntity,string>
-
-        /// <summary>
-        /// Gets the key of the specified <paramref name="entity"/>.
-        /// </summary>
-        /// <param name="entity">The entity.</param>
-        /// <returns>The entity key</returns>
-        public TKey GetKey(TEntity entity)
-        {
-            return _keySelector.Compile()(entity);
-        }
 
         /// <summary>
         /// Gets an <see cref="IQueryable{T}"/> for all Entities.

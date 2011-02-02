@@ -116,7 +116,6 @@ namespace MyMovies.WebApp.Controllers
 
         public ActionResult CreateComment(int movieId)
         {
-            ViewBag.Ratings = new [] { { Name = "*", Value = 1 } };
             Comment c = new Comment {MovieID = movieId};
             return View(c);
         }

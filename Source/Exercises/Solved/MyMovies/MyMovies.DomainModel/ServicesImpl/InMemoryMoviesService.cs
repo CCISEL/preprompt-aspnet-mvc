@@ -8,21 +8,54 @@ namespace MyMovies.DomainModel.ServicesImpl
     {
         public ICollection<Movie> GetAllMovies()
         {
-            return new List<Movie>()
-                       {
-                           new Movie()
+            var movies = new List<Movie>
+                             {
+
+                                 new Movie
+                                     {
+                                         Title = "When Harry Met Sally1",
+                                         Genre = "Romantic Comedy",
+                                         Year = 2004
+                                     },
+
+                                 new Movie
+                                     {
+                                         Title = "Ghostbusters 2",
+                                         Genre = "Comedy",
+                                         Year = 2002
+                                     },
+                             };
+
+            var comments = new List<Comment>
                                {
-                                   ID = 1,
-                                   Title = "Traseiros em brasa",
-                                   Genre = "Quentinho",
-                               },
-                           new Movie()
-                               {
-                                   ID = 1,
-                                   Title = "Coelhinhas na cama",
-                                   Genre = "Morninho",
-                               }
-                       };
+                                   new Comment
+                                       {
+                                           Description = "Description 1",
+                                           Rating = 3,
+                                           Movie = movies[0]
+                                       },
+                                   new Comment
+                                       {
+                                           Description = "Description 2",
+                                           Rating = 4,
+                                           Movie = movies[0]
+                                       },
+
+                                   new Comment
+                                       {
+                                           Description = "Description 3",
+                                           Rating = 5,
+                                           Movie = movies[1]
+                                       },
+                                       new Comment
+                                       {
+                                           Description = "Description 4",
+                                           Rating = 4,
+                                           Movie = movies[1]
+                                       },
+
+                               };
+            return movies;
         }
 
         public Movie Get(int id)

@@ -20,7 +20,7 @@ namespace MyMovies.DomainModel
         public string Actors { get; set; }
         public string Image { get; set; }
         public TimeSpan Runtime { get; set; }
-        public string Xpto1 { get; set; }
+        //public string Xpto1 { get; set; }
         
         //[StringLength(5)]
 
