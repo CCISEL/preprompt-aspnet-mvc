@@ -186,7 +186,8 @@ namespace MyMovies.Rep {
         /// <param name="entityId">The entity id.</param>
         /// <returns></returns>
         public TEntity Get(TKey entityId) {
-            return _dbSet.Find(entityId);
+            TEntity entity = _dbSet.Find(entityId);
+            return entity;
         }
 
         /// <summary>

@@ -26,9 +26,10 @@ namespace MyMovies.RepImpl {
             String response = new StreamReader(req.GetResponse().GetResponseStream()).ReadToEnd();
             XElement respXml = XElement.Parse(response);
             respXml = respXml.Element("movie");
-            Match m = new Regex(@"(\d+)\s+hrs\s+(\d+)\s+mins", RegexOptions.IgnoreCase).
+            Match m = new Regex(@"(\d+)\s+\w*\s+(\d+)\s+\w*", RegexOptions.IgnoreCase).
                 Match(respXml.Attribute("runtime").Value);
-            string runtime = String.Format("{0}:{1}", m.Groups[1].Captures[0], m.Groups[2].Captures[0]);
+            int idx = m.Groups.Count == 3 ? 1 : 0;
+            string runtime = String.Format("{0}:{1}", m.Groups[idx].Captures[0], m.Groups[2].Captures[0]);
             return new Movie
                        {
                            Title = respXml.Attribute("title").Value,

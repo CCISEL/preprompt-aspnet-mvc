@@ -28,7 +28,8 @@ namespace MyMovies.WebApp.Controllers
             Movie movie = _moviesService.Get(id);
             if(movie == null)
             {
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return View("NotFound", id);
             }
             return View(movie);
         }

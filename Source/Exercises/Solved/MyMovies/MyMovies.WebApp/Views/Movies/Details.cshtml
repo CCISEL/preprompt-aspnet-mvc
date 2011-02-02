@@ -24,11 +24,20 @@
     <div class="display-label">Actors</div>
     <div class="display-field">@Model.Actors</div>
 
-    <div class="display-label">Image</div>
-    <div class="display-field">@Model.Image</div>
+    @*<div class="display-label">Image</div>*@
+    @*<div class="display-field">@Model.Image</div>*@
+    <img src="@Model.Image" alt="movie image" />
 
     <div class="display-label">Runtime</div>
     <div class="display-field">@Model.Runtime</div>
+</fieldset>
+<fieldset>
+    <legend>Comments</legend>
+    @if(Model.Comments != null) {
+        foreach(var c in Model.Comments) {
+          @Html.Partial("Comments", c)     
+        }
+    }
 </fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
