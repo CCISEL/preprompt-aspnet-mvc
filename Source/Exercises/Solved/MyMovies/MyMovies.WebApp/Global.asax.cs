@@ -44,8 +44,6 @@ namespace MyMovies.WebApp
         {
             DbDatabase.SetInitializer(new MoviesInitializer());
             AppStart_Structuremap.Start();
-            DbDatabase.SetInitializer<MovieDbContext>(new MoviesInitializer());
-
 
             AreaRegistration.RegisterAllAreas();
             RegisterGlobalFilters(GlobalFilters.Filters);

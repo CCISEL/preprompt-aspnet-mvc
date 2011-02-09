@@ -24,6 +24,12 @@ namespace MyMovies.DomainModel.ServicesImpl
                                          Genre = "Comedy",
                                          Year = 2002
                                      },
+                                new Movie
+                                     {
+                                         Title = "The Hangover",
+                                         Genre = "Comedy",
+                                         Year = 2010
+                                     },
                              };
 
             var comments = new List<Comment>
@@ -84,6 +90,11 @@ namespace MyMovies.DomainModel.ServicesImpl
         }
 
         public Movie Search(string title)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICollection<string> GetGenres()
         {
             throw new NotImplementedException();
         }

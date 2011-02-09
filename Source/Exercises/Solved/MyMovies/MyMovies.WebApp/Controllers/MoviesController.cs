@@ -139,5 +139,10 @@ namespace MyMovies.WebApp.Controllers
 
             return View(c);
         }
+
+        public ActionResult Genres()
+        {
+            return Json(_moviesService.GetGenres(), JsonRequestBehavior.AllowGet);
+        }
     }
 }

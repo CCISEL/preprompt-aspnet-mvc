@@ -14,7 +14,12 @@ namespace MyMovies.RepImpl {
 
     public class EFIMDBAPIMoviesRepository : EFDbContextRepository<Movie, int>, IMoviesRepository
     {
-        public EFIMDBAPIMoviesRepository(MovieDbContext moviesContext) : base(moviesContext) { }
+        private readonly MovieDbContext _moviesContext;
+
+        public EFIMDBAPIMoviesRepository(MovieDbContext moviesContext) : base(moviesContext)
+        {
+            _moviesContext = moviesContext;
+        }
 
         #region Implementation of IMoviesRepository
 
@@ -42,6 +47,11 @@ namespace MyMovies.RepImpl {
                        };
 
 
+        }
+
+        public IQueryable<string> GetGenres()
+        {
+            return _moviesContext.Movies.Select(m => m.Genre).Distinct();
         }
 
         #endregion

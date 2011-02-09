@@ -60,6 +60,11 @@ namespace MyMovies.DomainModel.ServicesImpl
             return _moviesRepository.SearchByTitle(title);
         }
 
+        public ICollection<string> GetGenres()
+        {
+            return _moviesRepository.GetGenres().ToList();
+        }
+
         public void Dispose()
         {
             _moviesRepository.Dispose();

@@ -7,10 +7,10 @@ namespace MyMovies.DomainModel.Services
     {
         ICollection<Movie> GetAllMovies();
         Movie Get(int id);
-        Movie GetWithComments(int id);
         void Add(Movie newMovie);
         void Update(Movie movie);
         void Delete(int id);
         Movie Search(string title);
+        ICollection<string> GetGenres();
     }
 }

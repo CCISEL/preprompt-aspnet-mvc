@@ -57,6 +57,11 @@ namespace MyMovies.DomainModel.ServicesImpl
             throw new NotImplementedException();
         }
 
+        public ICollection<string> GetGenres()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Dispose()
         {
             _movieDbContext.Dispose();
