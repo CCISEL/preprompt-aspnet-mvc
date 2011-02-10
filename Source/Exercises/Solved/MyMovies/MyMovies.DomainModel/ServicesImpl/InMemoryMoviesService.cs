@@ -6,7 +6,7 @@ namespace MyMovies.DomainModel.ServicesImpl
 {
     public class InMemoryMoviesService : IMoviesService
     {
-        public ICollection<Movie> GetAllMovies()
+        public ICollection<Movie> GetAll()
         {
             var movies = new List<Movie>
                              {
@@ -28,6 +28,12 @@ namespace MyMovies.DomainModel.ServicesImpl
                                      {
                                          Title = "The Hangover",
                                          Genre = "Comedy",
+                                         Year = 2010
+                                     },
+                                new Movie
+                                     {
+                                         Title = "Inception",
+                                         Genre = "Action, Mistery",
                                          Year = 2010
                                      },
                              };
@@ -62,6 +68,11 @@ namespace MyMovies.DomainModel.ServicesImpl
 
                                };
             return movies;
+        }
+
+        public ICollection<Movie> GetAll(object filter)
+        {
+            throw new NotImplementedException();
         }
 
         public Movie Get(int id)

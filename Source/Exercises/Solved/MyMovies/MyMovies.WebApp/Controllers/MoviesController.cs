@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using MyMovies.DomainModel;
 using MyMovies.DomainModel.Services;
+using MyMovies.WebApp.Models;
 
 namespace MyMovies.WebApp.Controllers
 {
@@ -16,9 +20,9 @@ namespace MyMovies.WebApp.Controllers
 
         //
         // GET: /Movies/
-        public ActionResult Index()
+        public ActionResult Index(MovieFilter Filter)
         {
-            return View(_moviesService.GetAllMovies());
+            return View(new IndexPresentationModel {Movies = _moviesService.GetAll(Filter), Filter = Filter});
         }
 
 
@@ -143,6 +147,27 @@ namespace MyMovies.WebApp.Controllers
         public ActionResult Genres()
         {
             return Json(_moviesService.GetGenres(), JsonRequestBehavior.AllowGet);
+        }
+
+
+        public ActionResult Filter(MovieFilter Filter)
+        {
+            // The following projection is to Ugly to be shown. This is due the EF returned Movie subclass Proxy,
+            // could not be Json serialized due to a circular reference.
+            var movies = _moviesService.GetAll(Filter).Select(m => new Movie
+                                                                       {
+                                                                           Title = m.Title,
+                                                                           Actors = m.Actors,
+                                                                           Comments = m.Comments,
+                                                                           Director = m.Director,
+                                                                           Genre = m.Genre,
+                                                                           ID = m.ID,
+                                                                           Image = m.Image,
+                                                                           Runtime = m.Runtime, 
+                                                                           Year = m.Year
+                                                                       });
+             
+            return Json(movies, JsonRequestBehavior.AllowGet);
         }
     }
 }

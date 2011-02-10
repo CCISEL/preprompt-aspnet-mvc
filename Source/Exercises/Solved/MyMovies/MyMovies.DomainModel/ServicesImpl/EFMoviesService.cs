@@ -14,9 +14,14 @@ namespace MyMovies.DomainModel.ServicesImpl
             _movieDbContext = movieDbContext;
         }
 
-        public ICollection<Movie> GetAllMovies()
+        public ICollection<Movie> GetAll()
         {
             return _movieDbContext.Movies.ToList();
+        }
+
+        public ICollection<Movie> GetAll(object filter)
+        {
+            throw new NotImplementedException();
         }
 
         public Movie Get(int id)

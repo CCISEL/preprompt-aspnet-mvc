@@ -35,6 +35,13 @@ namespace MyMovies.Rep
         IQueryable<TEntity> GetAll();
 
         /// <summary>
+        /// Gets an <see cref="IQueryable{T}"/> for all Entities with the specified <paramref name="filterCriteria"/>.
+        /// </summary>
+        /// <param name="filterCriteria">The filter criteria.</param>
+        /// <returns>An <see cref="IQueryable{TEntity}"/> for all Entities</returns>
+        IQueryable<TEntity> GetAll(object filterCriteria);
+
+        /// <summary>
         /// Gets an <see cref="IPagedList{TEntity}"/> for the all entities.
         /// </summary>
         /// <param name="pageIndex">

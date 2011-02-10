@@ -1,11 +1,37 @@
-﻿@model IEnumerable<MyMovies.DomainModel.Movie>
+﻿@using MyMovies.WebApp.Models
+@model IndexPresentationModel
+
 
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
-
+@using (Html.BeginForm(null, null, FormMethod.Get )) {
+<fieldset>
+    <legend>Filter</legend>
+    <span class="editor-label">
+        @Html.LabelFor(model => model.Filter.Title)
+    </span>
+    <span class="editor-field">
+        @Html.TextBoxFor(model => model.Filter.Title)
+    </span>
+    <span class="editor-label">
+        @Html.LabelFor(model => model.Filter.Genre)
+    </span>
+    <span class="editor-field">
+        @Html.EditorFor(model => model.Filter.Genre)
+    </span>
+    <span class="editor-label">
+        @Html.LabelFor(model => model.Filter.Year)
+    </span>
+    <span class="editor-field">
+        @Html.EditorFor(model => model.Filter.Year)
+    </span>
+    <div><input type="submit" value="Filter" /></div>
+</fieldset>
+    
+}
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -35,7 +61,7 @@
         </th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.Movies) {
     <tr>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

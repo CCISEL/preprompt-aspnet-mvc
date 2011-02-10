@@ -64,6 +64,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\IndexPresentationModel.cs" />
+    <Compile Include="Models\MovieFilter.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -5,7 +5,8 @@ namespace MyMovies.DomainModel.Services
 {
     public interface IMoviesService : IDisposable
     {
-        ICollection<Movie> GetAllMovies();
+        ICollection<Movie> GetAll();
+        ICollection<Movie> GetAll(object filter);
         Movie Get(int id);
         void Add(Movie newMovie);
         void Update(Movie movie);

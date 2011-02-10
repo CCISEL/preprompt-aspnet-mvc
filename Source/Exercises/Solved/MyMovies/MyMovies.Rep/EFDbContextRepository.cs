@@ -7,13 +7,15 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using System.Reflection;
+using System.Text;
 using MyMovies.Rep.Helpers.Collections;
 
 namespace MyMovies.Rep {
     using System;
     using System.Data.Entity;
     using System.Linq;
-    using System.Linq.Expressions;
+    using System.Linq.Dynamic;
 
     /// <summary>
     /// EntityFramework implementation of <see cref="IRepository{TSLEntity,TSLKey}"/>
@@ -91,6 +93,41 @@ namespace MyMovies.Rep {
             return _dbSet;
         }
 
+        public IQueryable<TEntity> GetAll(object filterCriteria)
+        {
+            IQueryable<TEntity> entities = GetAll().ToList().AsQueryable();
+            String criteria;
+
+            if (filterCriteria != null && !String.IsNullOrEmpty(criteria = ToFilterCriteriaString(filterCriteria))) {
+                entities = entities.Where(criteria);
+            }
+
+            return entities;
+        }
+
+        private string ToFilterCriteriaString(object filterCriteria)
+        {
+            StringBuilder criteria = new StringBuilder();
+            if (filterCriteria != null) {
+                bool andMode = false; 
+                bool exactMatch = false;
+                String oper = andMode ? " && " : " || ";
+                String compareOperator = exactMatch ? "Equals" : "Contains";
+                foreach (PropertyInfo field in filterCriteria.GetType().GetProperties()) {
+                    object criteriaValue = field.GetValue(filterCriteria, null);
+                    if (criteriaValue != null) {
+                    String critreriaValueString = criteriaValue.ToString();
+                        String[] values = critreriaValueString.Split(',');
+                        foreach (string value in values) {
+                            criteria.AppendFormat("{3}{0}.ToString().{2}(\"{1}\")", field.Name, value, compareOperator, criteria.Length == 0 ? string.Empty : oper);
+                        }
+
+                    }
+                }
+            }
+            return criteria.ToString();
+        }
+
         /// <summary>
         /// Gets an <see cref="IPagedList{TEntity}"/> for the all entities.
         /// </summary>
@@ -148,10 +185,9 @@ namespace MyMovies.Rep {
         {
             IQueryable<TEntity> entities = GetAll();
 
-            // TODO: Use dynamic to filter
-            //if (String.IsNullOrEmpty(filterCriteria) == false) {
-            //    entities = entities.Where(filterCriteria);
-            //}
+            if (String.IsNullOrEmpty(filterCriteria) == false) {
+                entities = entities.Where(filterCriteria);
+            }
 
             // TODO: Use dynamic to filter
             //if (String.IsNullOrEmpty(sortingCriteria) == false) {

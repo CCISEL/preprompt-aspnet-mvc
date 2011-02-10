@@ -13,7 +13,7 @@ namespace MyMovies.WebApp.Models {
         protected override void Seed(MovieDbContext context)
         {
 
-            var movies = new InMemoryMoviesService().GetAllMovies().ToList();
+            var movies = new InMemoryMoviesService().GetAll().ToList();
             //var comments = (from m in movies
             //               from c in m.Comments
             //               select c).ToList();

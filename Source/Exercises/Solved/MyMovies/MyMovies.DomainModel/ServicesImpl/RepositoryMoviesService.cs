@@ -15,9 +15,14 @@ namespace MyMovies.DomainModel.ServicesImpl
             _moviesRepository = moviesRepository;
         }
 
-        public ICollection<Movie> GetAllMovies()
+        public ICollection<Movie> GetAll()
         {
             return _moviesRepository.GetAll().ToList();
+        }
+
+        public ICollection<Movie> GetAll(object filter)
+        {
+            return _moviesRepository.GetAll(filter).ToList();
         }
 
         public Movie Get(int id)

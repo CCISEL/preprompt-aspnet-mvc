@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dynamic">
+      <HintPath>..\packages\DynamicQuery.1.0\lib\35\Dynamic.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,6 +56,12 @@
       <Project>{1C039CE6-EB9A-4748-BF01-B8B371443591}</Project>
       <Name>MyMovies.Rep</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dynamic Expressions.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
